@@ -1,0 +1,34 @@
+$crp--output: false !default;
+
+////
+// Micro clearfix hack
+//
+// The clearfix hack is a popular way to clear floats without resorting to using presentational markup.This article presents an update to the clearfix method that further reduces the amount of CSS required.
+// Known support: Firefox 3.5+, Safari 4+, Chrome, Opera 9+, IE 6+
+//
+// @thanks Nicolas Gallagher @necolas
+// @link http://nicolasgallagher.com/micro-clearfix-hack/
+///
+@mixin crp-Clearfix() {
+	// For modern browsers
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+	}
+
+	&:after { clear: both; }
+	
+	// for IE
+	zoom: 1;
+}
+
+%crp-Clearfix {
+	@include crp-Clearfix();
+}
+
+@if ($crp--output) {
+	.crp-Clearfix {
+		@extend %crp-Clearfix;
+	}
+}

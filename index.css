@@ -1,0 +1,7 @@
+.crp-Clearfix {
+  zoom: 1; }
+  .crp-Clearfix:before, .crp-Clearfix:after {
+    content: "";
+    display: block; }
+  .crp-Clearfix:after {
+    clear: both; }
